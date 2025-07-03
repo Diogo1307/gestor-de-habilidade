@@ -1,0 +1,133 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: fadeIn 0.3s ease, slideUp 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #3D3D3D;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close-button:hover {
+  color: var(--text-color);
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-body input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: var(--border-radius);
+  background-color: #3D3D3D;
+  color: var(--text-color);
+  font-size: 16px;
+  border: 1px solid #4D4D4D;
+  box-sizing: border-box;
+}
+
+.modal-body input:focus {
+  border-color: var(--primary-color);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 15px 20px;
+  border-top: 1px solid #3D3D3D;
+}
+
+.cancel-button {
+  background-color: transparent;
+  color: var(--text-secondary);
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.cancel-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.save-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.save-button:hover {
+  background-color: #5a52d5;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+  }
+  
+  .modal-header h2 {
+    font-size: 18px;
+  }
+  
+  .modal-body input {
+    font-size: 14px;
+  }
+  
+  .modal-footer {
+    padding: 12px 15px;
+  }
+}
